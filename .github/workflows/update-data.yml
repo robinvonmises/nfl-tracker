@@ -1,0 +1,50 @@
+name: Daten aktualisieren
+
+on:
+  schedule:
+    # Montag, Dienstag und Freitag früh (UTC), wie bisher die geplante Aufgabe
+    - cron: "0 6 * * 1,2,5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Selbsttest der Umwandlungslogik
+        run: python3 tests/test_update.py
+
+      - name: Daten von ESPN holen
+        id: update
+        run: python3 scripts/update_data.py
+        continue-on-error: true
+
+      - name: Änderungen committen
+        run: |
+          git config user.name "nfl-tracker-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen."
+          else
+            git commit -m "Daten aktualisiert"
+            git push
+          fi
+
+      - name: Fehlschlag sichtbar machen
+        if: steps.update.outcome == 'failure'
+        run: |
+          echo "::error::Mindestens ein Dataset konnte nicht aktualisiert werden, siehe Log des Schritts 'Daten von ESPN holen'."
+          exit 1
