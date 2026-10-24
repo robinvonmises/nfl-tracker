@@ -40,9 +40,12 @@ def schedule_payload(t):
               "score": {"value": g["pts_for"], "displayValue": str(g["pts_for"])} if final else None}
         opp = {"homeAway": "away" if mine_home else "home", "team": team(g["opp"], g["opp_name"]),
                "score": {"value": g["pts_against"], "displayValue": str(g["pts_against"])} if final else None}
+        # Flex-Spiele ohne feste Uhrzeit: ESPN liefert Platzhalter 05:00 UTC mit timeValid=false
+        tbd = g["status"] == "flex"
+        date = (g["kickoff"][:10] + "T05:00Z") if tbd else g["kickoff"].replace(":00Z", "Z")
         events.append({
-            "id": g["game_id"], "date": g["kickoff"].replace(":00Z", "Z"), "week": {"number": g["week"]},
-            "competitions": [{"date": g["kickoff"].replace(":00Z", "Z"), "competitors": [me, opp],
+            "id": "E" + g["game_id"], "date": date, "week": {"number": g["week"]},
+            "competitions": [{"date": date, "timeValid": not tbd, "competitors": [me, opp],
                               "status": {"type": {"completed": final}}}],
         })
     return {"events": events}
@@ -115,35 +118,36 @@ def check(name, got, want):
 results = []
 
 # 1) Spiele: Rundreise muss die vorhandenen Zeilen exakt reproduzieren
-new_games = u.build_games(2026, games, fetch=fake_fetch)
-results.append(check("games Rundreise", new_games, games))
+ids = {}
+new_games = u.build_games(2026, games, fetch=fake_fetch, ids=ids)
+results.append(check("games Rundreise (inkl. Flex-Platzhalterzeiten)", new_games, games))
 results.append(not u.validate_games(new_games, games))
+results.append(check("ESPN-ID-Zuordnung", [ids], [{g["game_id"]: "E" + g["game_id"] for g in games}]))
 
-# 2) Tabelle: Ränge aus Playoff-Setzliste, Division aus Konferenzreihenfolge
+# 1b) Neues Flex-Spiel ohne Vorgänger: Platzhalter wird zu 18:00 UTC, Status flex
+fresh = u.build_games(2026, [g for g in games if g["week"] != 18], fetch=fake_fetch)
+wk18 = [g for g in fresh if g["week"] == 18]
+ok = all(g["kickoff"].endswith("T18:00:00Z") and g["status"] == "flex" for g in wk18) and len(wk18) == 3
+print("OK   neues Flex-Spiel" if ok else "FAIL neues Flex-Spiel")
+results.append(ok)
+
+# 2) Tabelle: Ränge aus Playoff-Setzliste, Division aus Konferenzreihenfolge, Reihenfolge wie bisher
 new_stand = u.build_standings(2026, standings, fetch=fake_fetch)
-key = lambda r: r["abbr"]  # noqa: E731
-results.append(check("standings Rundreise", sorted(new_stand, key=key), sorted(standings, key=key)))
+results.append(check("standings Rundreise", new_stand, standings))
 results.append(not u.validate_standings(new_stand))
 
-# 3) Boxscores: alle vorhandenen Spiele als "neu" behandeln
-fake_games = []
-for g in games:
-    if g["status"] == "final":
-        fake_games.append({**g, "game_id": "espn" + g["game_id"]})
-renamed = [{**b, "game_id": "espn" + b["game_id"]} for b in boxes]
-
-
+# 3) Boxscores: alle vorhandenen Spiele als "neu" behandeln, Abruf über die ID-Zuordnung
 def fake_fetch2(url):
     if "/summary" in url:
-        gid = url.split("event=")[1]
-        return summary_payload(next(b for b in boxes if b["game_id"] == gid))
+        eid = url.split("event=")[1]
+        return summary_payload(next(b for b in boxes if "E" + b["game_id"] == eid))
     raise AssertionError(url)
 
 
-built, problems = u.build_boxscores(fake_games, [], fetch=fake_fetch2)
+built, problems = u.build_boxscores(games, [], ids, fetch=fake_fetch2)
 results.append(not problems)
 results.append(check("boxscores Rundreise", sorted(built, key=lambda b: b["game_id"]),
-                     sorted(renamed, key=lambda b: b["game_id"])))
+                     sorted(boxes, key=lambda b: b["game_id"])))
 
 # 4) Schutz: ein vorher beendetes Spiel darf nicht wieder offen werden
 regress = [dict(g) for g in new_games]

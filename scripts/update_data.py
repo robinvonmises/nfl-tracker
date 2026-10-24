@@ -10,6 +10,7 @@ Aufruf:
     python3 scripts/update_data.py --dry-run  # holt und prüft, schreibt nichts
 """
 import json
+import re
 import sys
 import time
 import urllib.error
@@ -93,7 +94,8 @@ def slot_of(kickoff_iso):
 
 # --------------------------------------------------------------------------- games
 
-def build_games(season, old_games, fetch=fetch_json):
+def build_games(season, old_games, fetch=fetch_json, ids=None):
+    """ids (optional): wird mit game_id -> ESPN-Event-ID gefüllt (für die Boxscore-Abfrage)."""
     old_by_key = {(g["team"], g["week"]): g for g in old_games}
     rows = []
     for team in TRACKED:
@@ -111,6 +113,11 @@ def build_games(season, old_games, fetch=fetch_json):
             opp = abbr_of(theirs["team"])
             old = old_by_key.get((team, week))
             same_opp = bool(old) and old["opp"] == opp
+            # Noch nicht festgelegte Uhrzeit (Flex): ESPN liefert dann einen Platzhalter
+            # (timeValid=false, 05:00 UTC). Bisherige Zeit behalten, sonst 13 Uhr Eastern.
+            tbd = comp.get("timeValid") is False and not final
+            if tbd:
+                kickoff = old["kickoff"] if same_opp else kickoff[:10] + "T18:00:00Z"
 
             row = {
                 "game_id": old["game_id"] if same_opp else f"espn{ev['id']}",
@@ -138,10 +145,12 @@ def build_games(season, old_games, fetch=fetch_json):
                 )
             else:
                 flex_carry = bool(old) and old["status"] == "flex" and old["kickoff"] == kickoff
-                if flex_carry or week == 18:
+                if flex_carry or tbd or week == 18:
                     row["status"] = "flex"
                 if old and old.get("win_prob") is not None and old["kickoff"] == kickoff:
                     row["win_prob"] = old["win_prob"]
+            if ids is not None:
+                ids[row["game_id"]] = str(ev["id"])
             rows.append(row)
     rows.sort(key=lambda r: (TRACKED.index(r["team"]), r["week"]))
     return rows
@@ -210,6 +219,9 @@ def build_standings(season, old_standings, fetch=fetch_json):
                 "conference": t["conference"], "wins": t["wins"], "losses": t["losses"],
                 "win_percentage": t["win_percentage"], "div_rank": i, "conf_rank": t["conf_rank"],
             })
+    # Reihenfolge der bisherigen Datei beibehalten, damit Commits nur echte Änderungen zeigen
+    order = {r["abbr"]: i for i, r in enumerate(old_standings)}
+    rows.sort(key=lambda r: order.get(r["abbr"], len(order)))
     return rows
 
 
@@ -266,7 +278,10 @@ def build_boxscore(game_id, event_id, fetch=fetch_json):
         out[f"{side}_pass_yards"] = int(_stat(s, "netPassingYards"))
         out[f"{side}_rush_yards"] = int(_stat(s, "rushingYards"))
         out[f"{side}_turnovers"] = int(_stat(s, "turnovers"))
-        out[f"{side}_possession"] = str(_stat(s, "possessionTime"))
+        possession = str(_stat(s, "possessionTime"))
+        if not re.fullmatch(r"\d{1,2}:\d{2}", possession):
+            raise ValueError(f"unerwartetes Format bei possessionTime: {possession!r}")
+        out[f"{side}_possession"] = possession
         out[f"{side}_first_downs"] = int(_stat(s, "firstDowns"))
         # Sacks des Teams = Sacks, die der Gegner einstecken musste
         out[f"{side}_sacks"] = _count(_stat(o, "sacksYardsLost"))
@@ -274,7 +289,7 @@ def build_boxscore(game_id, event_id, fetch=fetch_json):
     return out
 
 
-def build_boxscores(games, old_boxscores, fetch=fetch_json):
+def build_boxscores(games, old_boxscores, ids, fetch=fetch_json):
     have = {b["game_id"] for b in old_boxscores}
     rows = list(old_boxscores)
     problems, seen = [], set()
@@ -283,11 +298,12 @@ def build_boxscores(games, old_boxscores, fetch=fetch_json):
         if g["status"] != "final" or gid in have or gid in seen:
             continue
         seen.add(gid)
-        if not gid.startswith("espn"):
-            problems.append(f"{gid}: beendet, aber ohne Boxscore und ohne ESPN-ID")
+        event_id = ids.get(gid) or (gid[len("espn"):] if gid.startswith("espn") else None)
+        if not event_id:
+            problems.append(f"{gid}: beendet, aber ohne ESPN-ID")
             continue
         try:
-            rows.append(build_boxscore(gid, gid[len("espn"):], fetch))
+            rows.append(build_boxscore(gid, event_id, fetch))
         except (KeyError, ValueError, IndexError, RuntimeError) as e:
             problems.append(f"{gid}: Boxscore nicht lesbar ({type(e).__name__}: {e})")
     return rows, problems
@@ -314,10 +330,13 @@ def main(argv):
     errors, changed = [], []
 
     old_games, old_stand, old_box = load("games"), load("standings"), load("boxscores")
+    ids_file = DATA / "espn_ids.json"
+    old_ids = json.loads(ids_file.read_text()) if ids_file.exists() else {}
+    ids = dict(old_ids)
     games = old_games
 
     try:
-        new = build_games(season, old_games)
+        new = build_games(season, old_games, ids=ids)
         problems = validate_games(new, old_games)
         if problems:
             raise ValueError("; ".join(problems))
@@ -326,6 +345,8 @@ def main(argv):
             changed.append("games")
             if not dry:
                 dump("games", new)
+        if ids != old_ids and not dry:
+            ids_file.write_text(json.dumps(ids, indent=1, sort_keys=True) + "\n")
     except Exception as e:  # noqa: BLE001 - jedes Dataset soll einzeln scheitern dürfen
         errors.append(f"games: {e}")
 
@@ -342,7 +363,7 @@ def main(argv):
         errors.append(f"standings: {e}")
 
     try:
-        new, problems = build_boxscores(games, old_box)
+        new, problems = build_boxscores(games, old_box, ids)
         if problems:
             errors.append("boxscores: " + "; ".join(problems))
         if new != old_box:
@@ -352,12 +373,15 @@ def main(argv):
     except Exception as e:  # noqa: BLE001
         errors.append(f"boxscores: {e}")
 
-    if changed and not dry:
-        meta = {
-            "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "source": "ESPN (NFL-Spielplan, Ergebnisse, Tabelle, Spielstatistik)",
-            "errors": errors,
-        }
+    if not dry:
+        if errors:  # Zeitpunkt der letzten fehlerfreien Aktualisierung bleibt stehen
+            meta = {**load("meta"), "errors": errors}
+        else:
+            meta = {
+                "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "source": "ESPN (NFL-Spielplan, Ergebnisse, Tabelle, Spielstatistik)",
+                "errors": [],
+            }
         (DATA / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1) + "\n")
 
     print("geändert:", ", ".join(changed) or "nichts")
