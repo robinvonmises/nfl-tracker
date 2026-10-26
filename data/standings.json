@@ -4,11 +4,11 @@
   "team_name": "New York Giants",
   "division": "NFC East",
   "conference": "NFC",
-  "wins": 3,
+  "wins": 4,
   "losses": 2,
-  "win_percentage": 0.583,
+  "win_percentage": 0.643,
   "div_rank": 1,
-  "conf_rank": 4
+  "conf_rank": 3
  },
  {
   "abbr": "WAS",
@@ -19,7 +19,7 @@
   "losses": 4,
   "win_percentage": 0.25,
   "div_rank": 4,
-  "conf_rank": 15
+  "conf_rank": 16
  },
  {
   "abbr": "PHI",
@@ -49,30 +49,30 @@
   "division": "NFC South",
   "conference": "NFC",
   "wins": 2,
-  "losses": 4,
-  "win_percentage": 0.333,
-  "div_rank": 3,
-  "conf_rank": 10
+  "losses": 5,
+  "win_percentage": 0.286,
+  "div_rank": 4,
+  "conf_rank": 14
  },
  {
   "abbr": "TB",
   "team_name": "Tampa Bay Buccaneers",
   "division": "NFC South",
   "conference": "NFC",
-  "wins": 1,
+  "wins": 2,
   "losses": 5,
-  "win_percentage": 0.167,
-  "div_rank": 4,
-  "conf_rank": 16
+  "win_percentage": 0.286,
+  "div_rank": 3,
+  "conf_rank": 13
  },
  {
   "abbr": "ATL",
   "team_name": "Atlanta Falcons",
   "division": "NFC South",
   "conference": "NFC",
-  "wins": 2,
+  "wins": 3,
   "losses": 4,
-  "win_percentage": 0.333,
+  "win_percentage": 0.429,
   "div_rank": 2,
   "conf_rank": 9
  },
@@ -82,30 +82,30 @@
   "division": "NFC South",
   "conference": "NFC",
   "wins": 3,
-  "losses": 2,
-  "win_percentage": 0.6,
+  "losses": 3,
+  "win_percentage": 0.5,
   "div_rank": 1,
-  "conf_rank": 3
+  "conf_rank": 4
  },
  {
   "abbr": "LA",
   "team_name": "Los Angeles Rams",
   "division": "NFC West",
   "conference": "NFC",
-  "wins": 2,
+  "wins": 3,
   "losses": 4,
-  "win_percentage": 0.333,
-  "div_rank": 4,
-  "conf_rank": 14
+  "win_percentage": 0.429,
+  "div_rank": 3,
+  "conf_rank": 10
  },
  {
   "abbr": "SEA",
   "team_name": "Seattle Seahawks",
   "division": "NFC West",
   "conference": "NFC",
-  "wins": 3,
+  "wins": 4,
   "losses": 3,
-  "win_percentage": 0.5,
+  "win_percentage": 0.571,
   "div_rank": 2,
   "conf_rank": 8
  },
@@ -115,10 +115,10 @@
   "division": "NFC West",
   "conference": "NFC",
   "wins": 2,
-  "losses": 4,
-  "win_percentage": 0.333,
-  "div_rank": 3,
-  "conf_rank": 13
+  "losses": 5,
+  "win_percentage": 0.286,
+  "div_rank": 4,
+  "conf_rank": 15
  },
  {
   "abbr": "SF",
@@ -126,21 +126,21 @@
   "division": "NFC West",
   "conference": "NFC",
   "wins": 6,
-  "losses": 0,
-  "win_percentage": 1.0,
+  "losses": 1,
+  "win_percentage": 0.857,
   "div_rank": 1,
-  "conf_rank": 1
+  "conf_rank": 2
  },
  {
   "abbr": "MIN",
   "team_name": "Minnesota Vikings",
   "division": "NFC North",
   "conference": "NFC",
-  "wins": 5,
+  "wins": 6,
   "losses": 0,
   "win_percentage": 1.0,
   "div_rank": 1,
-  "conf_rank": 2
+  "conf_rank": 1
  },
  {
   "abbr": "CHI",
@@ -159,21 +159,21 @@
   "division": "NFC North",
   "conference": "NFC",
   "wins": 4,
-  "losses": 2,
-  "win_percentage": 0.667,
-  "div_rank": 3,
-  "conf_rank": 6
+  "losses": 3,
+  "win_percentage": 0.571,
+  "div_rank": 4,
+  "conf_rank": 7
  },
  {
   "abbr": "DET",
   "team_name": "Detroit Lions",
   "division": "NFC North",
   "conference": "NFC",
-  "wins": 3,
+  "wins": 4,
   "losses": 2,
-  "win_percentage": 0.6,
-  "div_rank": 4,
-  "conf_rank": 7
+  "win_percentage": 0.667,
+  "div_rank": 3,
+  "conf_rank": 6
  },
  {
   "abbr": "LAC",
@@ -192,8 +192,8 @@
   "division": "AFC West",
   "conference": "AFC",
   "wins": 5,
-  "losses": 0,
-  "win_percentage": 1.0,
+  "losses": 1,
+  "win_percentage": 0.833,
   "div_rank": 1,
   "conf_rank": 1
  },
@@ -203,8 +203,8 @@
   "division": "AFC West",
   "conference": "AFC",
   "wins": 3,
-  "losses": 3,
-  "win_percentage": 0.5,
+  "losses": 4,
+  "win_percentage": 0.429,
   "div_rank": 3,
   "conf_rank": 10
  },
@@ -213,9 +213,9 @@
   "team_name": "Denver Broncos",
   "division": "AFC West",
   "conference": "AFC",
-  "wins": 4,
+  "wins": 5,
   "losses": 2,
-  "win_percentage": 0.667,
+  "win_percentage": 0.714,
   "div_rank": 2,
   "conf_rank": 5
  },
@@ -224,11 +224,11 @@
   "team_name": "Miami Dolphins",
   "division": "AFC East",
   "conference": "AFC",
-  "wins": 0,
+  "wins": 1,
   "losses": 5,
-  "win_percentage": 0.0,
+  "win_percentage": 0.167,
   "div_rank": 4,
-  "conf_rank": 15
+  "conf_rank": 14
  },
  {
   "abbr": "NYJ",
@@ -236,8 +236,8 @@
   "division": "AFC East",
   "conference": "AFC",
   "wins": 2,
-  "losses": 4,
-  "win_percentage": 0.333,
+  "losses": 5,
+  "win_percentage": 0.286,
   "div_rank": 3,
   "conf_rank": 11
  },
@@ -261,7 +261,7 @@
   "losses": 3,
   "win_percentage": 0.571,
   "div_rank": 2,
-  "conf_rank": 9
+  "conf_rank": 8
  },
  {
   "abbr": "IND",
@@ -269,8 +269,8 @@
   "division": "AFC South",
   "conference": "AFC",
   "wins": 2,
-  "losses": 4,
-  "win_percentage": 0.333,
+  "losses": 5,
+  "win_percentage": 0.286,
   "div_rank": 2,
   "conf_rank": 12
  },
@@ -280,8 +280,8 @@
   "division": "AFC South",
   "conference": "AFC",
   "wins": 2,
-  "losses": 4,
-  "win_percentage": 0.333,
+  "losses": 5,
+  "win_percentage": 0.286,
   "div_rank": 3,
   "conf_rank": 13
  },
@@ -291,10 +291,10 @@
   "division": "AFC South",
   "conference": "AFC",
   "wins": 1,
-  "losses": 5,
-  "win_percentage": 0.167,
+  "losses": 6,
+  "win_percentage": 0.143,
   "div_rank": 4,
-  "conf_rank": 14
+  "conf_rank": 15
  },
  {
   "abbr": "JAC",
@@ -305,27 +305,27 @@
   "losses": 2,
   "win_percentage": 0.667,
   "div_rank": 1,
-  "conf_rank": 3
+  "conf_rank": 4
  },
  {
   "abbr": "CIN",
   "team_name": "Cincinnati Bengals",
   "division": "AFC North",
   "conference": "AFC",
-  "wins": 3,
+  "wins": 4,
   "losses": 2,
-  "win_percentage": 0.6,
-  "div_rank": 4,
-  "conf_rank": 8
+  "win_percentage": 0.667,
+  "div_rank": 3,
+  "conf_rank": 7
  },
  {
   "abbr": "PIT",
   "team_name": "Pittsburgh Steelers",
   "division": "AFC North",
   "conference": "AFC",
-  "wins": 4,
+  "wins": 5,
   "losses": 2,
-  "win_percentage": 0.667,
+  "win_percentage": 0.714,
   "div_rank": 2,
   "conf_rank": 6
  },
@@ -334,11 +334,11 @@
   "team_name": "Cleveland Browns",
   "division": "AFC North",
   "conference": "AFC",
-  "wins": 4,
+  "wins": 5,
   "losses": 2,
-  "win_percentage": 0.667,
+  "win_percentage": 0.714,
   "div_rank": 1,
-  "conf_rank": 4
+  "conf_rank": 3
  },
  {
   "abbr": "BAL",
@@ -346,9 +346,9 @@
   "division": "AFC North",
   "conference": "AFC",
   "wins": 4,
-  "losses": 2,
-  "win_percentage": 0.667,
-  "div_rank": 3,
-  "conf_rank": 7
+  "losses": 3,
+  "win_percentage": 0.571,
+  "div_rank": 4,
+  "conf_rank": 9
  }
 ]
