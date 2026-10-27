@@ -27,21 +27,21 @@
   "division": "NFC East",
   "conference": "NFC",
   "wins": 2,
-  "losses": 4,
-  "win_percentage": 0.333,
-  "div_rank": 2,
-  "conf_rank": 11
+  "losses": 5,
+  "win_percentage": 0.286,
+  "div_rank": 3,
+  "conf_rank": 15
  },
  {
   "abbr": "DAL",
   "team_name": "Dallas Cowboys",
   "division": "NFC East",
   "conference": "NFC",
-  "wins": 2,
+  "wins": 3,
   "losses": 4,
-  "win_percentage": 0.333,
-  "div_rank": 3,
-  "conf_rank": 12
+  "win_percentage": 0.429,
+  "div_rank": 2,
+  "conf_rank": 11
  },
  {
   "abbr": "NO",
@@ -52,7 +52,7 @@
   "losses": 5,
   "win_percentage": 0.286,
   "div_rank": 4,
-  "conf_rank": 14
+  "conf_rank": 13
  },
  {
   "abbr": "TB",
@@ -63,7 +63,7 @@
   "losses": 5,
   "win_percentage": 0.286,
   "div_rank": 3,
-  "conf_rank": 13
+  "conf_rank": 12
  },
  {
   "abbr": "ATL",
@@ -118,7 +118,7 @@
   "losses": 5,
   "win_percentage": 0.286,
   "div_rank": 4,
-  "conf_rank": 15
+  "conf_rank": 14
  },
  {
   "abbr": "SF",
