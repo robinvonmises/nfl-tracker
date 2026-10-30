@@ -722,5 +722,41 @@
   "away_first_downs": 18,
   "away_sacks": 3,
   "away_penalties": 11
+ },
+ {
+  "game_id": "71515952",
+  "home": "GB",
+  "away": "CAR",
+  "home_pts": 27,
+  "away_pts": 19,
+  "overtime": false,
+  "home_q": [
+   6,
+   14,
+   7,
+   0
+  ],
+  "away_q": [
+   3,
+   7,
+   3,
+   6
+  ],
+  "home_total_yards": 354,
+  "home_pass_yards": 288,
+  "home_rush_yards": 66,
+  "home_turnovers": 3,
+  "home_possession": "31:03",
+  "home_first_downs": 21,
+  "home_sacks": 6,
+  "home_penalties": 6,
+  "away_total_yards": 258,
+  "away_pass_yards": 176,
+  "away_rush_yards": 82,
+  "away_turnovers": 2,
+  "away_possession": "28:57",
+  "away_first_downs": 14,
+  "away_sacks": 0,
+  "away_penalties": 5
  }
 ]

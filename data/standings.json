@@ -82,8 +82,8 @@
   "division": "NFC South",
   "conference": "NFC",
   "wins": 3,
-  "losses": 3,
-  "win_percentage": 0.5,
+  "losses": 4,
+  "win_percentage": 0.429,
   "div_rank": 1,
   "conf_rank": 4
  },
@@ -158,9 +158,9 @@
   "team_name": "Green Bay Packers",
   "division": "NFC North",
   "conference": "NFC",
-  "wins": 4,
+  "wins": 5,
   "losses": 3,
-  "win_percentage": 0.571,
+  "win_percentage": 0.625,
   "div_rank": 4,
   "conf_rank": 7
  },
