@@ -104,8 +104,8 @@
   "division": "NFC West",
   "conference": "NFC",
   "wins": 4,
-  "losses": 3,
-  "win_percentage": 0.571,
+  "losses": 4,
+  "win_percentage": 0.5,
   "div_rank": 2,
   "conf_rank": 8
  },
@@ -147,11 +147,11 @@
   "team_name": "Chicago Bears",
   "division": "NFC North",
   "conference": "NFC",
-  "wins": 5,
+  "wins": 6,
   "losses": 2,
-  "win_percentage": 0.714,
-  "div_rank": 3,
-  "conf_rank": 6
+  "win_percentage": 0.75,
+  "div_rank": 2,
+  "conf_rank": 5
  },
  {
   "abbr": "GB",
@@ -172,8 +172,8 @@
   "wins": 5,
   "losses": 2,
   "win_percentage": 0.714,
-  "div_rank": 2,
-  "conf_rank": 5
+  "div_rank": 3,
+  "conf_rank": 6
  },
  {
   "abbr": "LAC",
