@@ -301,11 +301,11 @@
   "team_name": "Jacksonville Jaguars",
   "division": "AFC South",
   "conference": "AFC",
-  "wins": 5,
+  "wins": 6,
   "losses": 2,
-  "win_percentage": 0.714,
+  "win_percentage": 0.75,
   "div_rank": 1,
-  "conf_rank": 4
+  "conf_rank": 3
  },
  {
   "abbr": "CIN",
@@ -327,7 +327,7 @@
   "losses": 2,
   "win_percentage": 0.75,
   "div_rank": 1,
-  "conf_rank": 3
+  "conf_rank": 4
  },
  {
   "abbr": "CLE",
@@ -346,8 +346,8 @@
   "division": "AFC North",
   "conference": "AFC",
   "wins": 4,
-  "losses": 4,
-  "win_percentage": 0.5,
+  "losses": 5,
+  "win_percentage": 0.444,
   "div_rank": 4,
   "conf_rank": 10
  }
