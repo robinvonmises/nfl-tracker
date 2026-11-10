@@ -137,10 +137,10 @@
   "division": "NFC North",
   "conference": "NFC",
   "wins": 6,
-  "losses": 1,
-  "win_percentage": 0.857,
-  "div_rank": 1,
-  "conf_rank": 2
+  "losses": 2,
+  "win_percentage": 0.75,
+  "div_rank": 3,
+  "conf_rank": 6
  },
  {
   "abbr": "CHI",
@@ -150,8 +150,8 @@
   "wins": 7,
   "losses": 2,
   "win_percentage": 0.778,
-  "div_rank": 2,
-  "conf_rank": 5
+  "div_rank": 1,
+  "conf_rank": 2
  },
  {
   "abbr": "GB",
@@ -172,8 +172,8 @@
   "wins": 6,
   "losses": 2,
   "win_percentage": 0.75,
-  "div_rank": 3,
-  "conf_rank": 6
+  "div_rank": 2,
+  "conf_rank": 5
  },
  {
   "abbr": "LAC",
@@ -246,9 +246,9 @@
   "team_name": "Buffalo Bills",
   "division": "AFC East",
   "conference": "AFC",
-  "wins": 6,
+  "wins": 7,
   "losses": 1,
-  "win_percentage": 0.857,
+  "win_percentage": 0.875,
   "div_rank": 1,
   "conf_rank": 1
  },
