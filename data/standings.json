@@ -5,8 +5,8 @@
   "division": "NFC East",
   "conference": "NFC",
   "wins": 5,
-  "losses": 2,
-  "win_percentage": 0.688,
+  "losses": 3,
+  "win_percentage": 0.611,
   "div_rank": 1,
   "conf_rank": 3
  },
@@ -15,11 +15,11 @@
   "team_name": "Washington Commanders",
   "division": "NFC East",
   "conference": "NFC",
-  "wins": 2,
+  "wins": 3,
   "losses": 5,
-  "win_percentage": 0.312,
+  "win_percentage": 0.389,
   "div_rank": 3,
-  "conf_rank": 15
+  "conf_rank": 11
  },
  {
   "abbr": "PHI",
@@ -52,7 +52,7 @@
   "losses": 5,
   "win_percentage": 0.375,
   "div_rank": 2,
-  "conf_rank": 11
+  "conf_rank": 12
  },
  {
   "abbr": "TB",
@@ -63,7 +63,7 @@
   "losses": 6,
   "win_percentage": 0.333,
   "div_rank": 3,
-  "conf_rank": 12
+  "conf_rank": 13
  },
  {
   "abbr": "ATL",
@@ -74,7 +74,7 @@
   "losses": 6,
   "win_percentage": 0.333,
   "div_rank": 4,
-  "conf_rank": 13
+  "conf_rank": 14
  },
  {
   "abbr": "CAR",
@@ -118,7 +118,7 @@
   "losses": 6,
   "win_percentage": 0.333,
   "div_rank": 4,
-  "conf_rank": 14
+  "conf_rank": 15
  },
  {
   "abbr": "SF",
