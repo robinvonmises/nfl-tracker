@@ -940,5 +940,77 @@
   "away_first_downs": 13,
   "away_sacks": 0,
   "away_penalties": 9
+ },
+ {
+  "game_id": "71516014",
+  "home": "GB",
+  "away": "MIN",
+  "home_pts": 10,
+  "away_pts": 30,
+  "overtime": false,
+  "home_q": [
+   0,
+   0,
+   10,
+   0
+  ],
+  "away_q": [
+   10,
+   7,
+   3,
+   10
+  ],
+  "home_total_yards": 220,
+  "home_pass_yards": 164,
+  "home_rush_yards": 56,
+  "home_turnovers": 4,
+  "home_possession": "24:44",
+  "home_first_downs": 16,
+  "home_sacks": 3,
+  "home_penalties": 6,
+  "away_total_yards": 312,
+  "away_pass_yards": 183,
+  "away_rush_yards": 129,
+  "away_turnovers": 1,
+  "away_possession": "35:16",
+  "away_first_downs": 19,
+  "away_sacks": 8,
+  "away_penalties": 7
+ },
+ {
+  "game_id": "71516024",
+  "home": "ARI",
+  "away": "LA",
+  "home_pts": 6,
+  "away_pts": 34,
+  "overtime": false,
+  "home_q": [
+   6,
+   0,
+   0,
+   0
+  ],
+  "away_q": [
+   3,
+   14,
+   14,
+   3
+  ],
+  "home_total_yards": 123,
+  "home_pass_yards": 89,
+  "home_rush_yards": 34,
+  "home_turnovers": 2,
+  "home_possession": "17:37",
+  "home_first_downs": 6,
+  "home_sacks": 2,
+  "home_penalties": 4,
+  "away_total_yards": 436,
+  "away_pass_yards": 234,
+  "away_rush_yards": 202,
+  "away_turnovers": 1,
+  "away_possession": "42:23",
+  "away_first_downs": 28,
+  "away_sacks": 5,
+  "away_penalties": 5
  }
 ]
