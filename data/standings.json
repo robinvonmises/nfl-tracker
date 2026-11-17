@@ -180,11 +180,11 @@
   "team_name": "Los Angeles Chargers",
   "division": "AFC West",
   "conference": "AFC",
-  "wins": 0,
+  "wins": 1,
   "losses": 8,
-  "win_percentage": 0.0,
+  "win_percentage": 0.111,
   "div_rank": 4,
-  "conf_rank": 16
+  "conf_rank": 14
  },
  {
   "abbr": "KC",
@@ -206,7 +206,7 @@
   "losses": 6,
   "win_percentage": 0.4,
   "div_rank": 3,
-  "conf_rank": 10
+  "conf_rank": 9
  },
  {
   "abbr": "DEN",
@@ -228,7 +228,7 @@
   "losses": 8,
   "win_percentage": 0.111,
   "div_rank": 4,
-  "conf_rank": 14
+  "conf_rank": 15
  },
  {
   "abbr": "NYJ",
@@ -294,7 +294,7 @@
   "losses": 8,
   "win_percentage": 0.111,
   "div_rank": 4,
-  "conf_rank": 15
+  "conf_rank": 16
  },
  {
   "abbr": "JAC",
@@ -346,9 +346,9 @@
   "division": "AFC North",
   "conference": "AFC",
   "wins": 4,
-  "losses": 5,
-  "win_percentage": 0.444,
+  "losses": 6,
+  "win_percentage": 0.4,
   "div_rank": 4,
-  "conf_rank": 9
+  "conf_rank": 10
  }
 ]
