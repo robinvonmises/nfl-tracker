@@ -206,7 +206,7 @@
   "losses": 6,
   "win_percentage": 0.4,
   "div_rank": 3,
-  "conf_rank": 9
+  "conf_rank": 10
  },
  {
   "abbr": "DEN",
@@ -269,8 +269,8 @@
   "division": "AFC South",
   "conference": "AFC",
   "wins": 3,
-  "losses": 7,
-  "win_percentage": 0.3,
+  "losses": 8,
+  "win_percentage": 0.273,
   "div_rank": 3,
   "conf_rank": 12
  },
@@ -279,11 +279,11 @@
   "team_name": "Houston Texans",
   "division": "AFC South",
   "conference": "AFC",
-  "wins": 3,
+  "wins": 4,
   "losses": 6,
-  "win_percentage": 0.333,
+  "win_percentage": 0.4,
   "div_rank": 2,
-  "conf_rank": 11
+  "conf_rank": 9
  },
  {
   "abbr": "TEN",
@@ -349,6 +349,6 @@
   "losses": 6,
   "win_percentage": 0.4,
   "div_rank": 4,
-  "conf_rank": 10
+  "conf_rank": 11
  }
 ]
