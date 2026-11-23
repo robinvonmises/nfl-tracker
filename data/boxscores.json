@@ -1012,5 +1012,77 @@
   "away_first_downs": 28,
   "away_sacks": 5,
   "away_penalties": 5
+ },
+ {
+  "game_id": "71516052",
+  "home": "DEN",
+  "away": "LV",
+  "home_pts": 38,
+  "away_pts": 24,
+  "overtime": false,
+  "home_q": [
+   3,
+   14,
+   7,
+   14
+  ],
+  "away_q": [
+   0,
+   10,
+   7,
+   7
+  ],
+  "home_total_yards": 351,
+  "home_pass_yards": 218,
+  "home_rush_yards": 133,
+  "home_turnovers": 1,
+  "home_possession": "33:44",
+  "home_first_downs": 25,
+  "home_sacks": 5,
+  "home_penalties": 2,
+  "away_total_yards": 370,
+  "away_pass_yards": 227,
+  "away_rush_yards": 143,
+  "away_turnovers": 1,
+  "away_possession": "26:16",
+  "away_first_downs": 14,
+  "away_sacks": 1,
+  "away_penalties": 9
+ },
+ {
+  "game_id": "71516046",
+  "home": "KC",
+  "away": "ARI",
+  "home_pts": 34,
+  "away_pts": 7,
+  "overtime": false,
+  "home_q": [
+   14,
+   13,
+   0,
+   7
+  ],
+  "away_q": [
+   0,
+   7,
+   0,
+   0
+  ],
+  "home_total_yards": 435,
+  "home_pass_yards": 317,
+  "home_rush_yards": 118,
+  "home_turnovers": 0,
+  "home_possession": "32:26",
+  "home_first_downs": 27,
+  "home_sacks": 3,
+  "home_penalties": 2,
+  "away_total_yards": 205,
+  "away_pass_yards": 130,
+  "away_rush_yards": 75,
+  "away_turnovers": 0,
+  "away_possession": "27:34",
+  "away_first_downs": 14,
+  "away_sacks": 1,
+  "away_penalties": 4
  }
 ]
