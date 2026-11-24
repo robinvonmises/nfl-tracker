@@ -15,9 +15,9 @@
   "team_name": "Washington Commanders",
   "division": "NFC East",
   "conference": "NFC",
-  "wins": 3,
+  "wins": 4,
   "losses": 5,
-  "win_percentage": 0.389,
+  "win_percentage": 0.45,
   "div_rank": 3,
   "conf_rank": 11
  },
@@ -305,7 +305,7 @@
   "losses": 3,
   "win_percentage": 0.7,
   "div_rank": 1,
-  "conf_rank": 4
+  "conf_rank": 3
  },
  {
   "abbr": "CIN",
@@ -313,10 +313,10 @@
   "division": "AFC North",
   "conference": "AFC",
   "wins": 7,
-  "losses": 2,
-  "win_percentage": 0.778,
+  "losses": 3,
+  "win_percentage": 0.7,
   "div_rank": 1,
-  "conf_rank": 3
+  "conf_rank": 4
  },
  {
   "abbr": "PIT",
