@@ -1084,5 +1084,41 @@
   "away_first_downs": 14,
   "away_sacks": 1,
   "away_penalties": 4
+ },
+ {
+  "game_id": "71492556",
+  "home": "LA",
+  "away": "GB",
+  "home_pts": 26,
+  "away_pts": 13,
+  "overtime": false,
+  "home_q": [
+   6,
+   7,
+   7,
+   6
+  ],
+  "away_q": [
+   3,
+   10,
+   0,
+   0
+  ],
+  "home_total_yards": 373,
+  "home_pass_yards": 132,
+  "home_rush_yards": 241,
+  "home_turnovers": 1,
+  "home_possession": "40:40",
+  "home_first_downs": 23,
+  "home_sacks": 1,
+  "home_penalties": 5,
+  "away_total_yards": 244,
+  "away_pass_yards": 189,
+  "away_rush_yards": 55,
+  "away_turnovers": 3,
+  "away_possession": "19:20",
+  "away_first_downs": 11,
+  "away_sacks": 1,
+  "away_penalties": 8
  }
 ]

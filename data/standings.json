@@ -18,19 +18,19 @@
   "wins": 4,
   "losses": 5,
   "win_percentage": 0.45,
-  "div_rank": 3,
-  "conf_rank": 11
+  "div_rank": 2,
+  "conf_rank": 10
  },
  {
   "abbr": "PHI",
   "team_name": "Philadelphia Eagles",
   "division": "NFC East",
   "conference": "NFC",
-  "wins": 3,
+  "wins": 4,
   "losses": 7,
-  "win_percentage": 0.3,
+  "win_percentage": 0.364,
   "div_rank": 4,
-  "conf_rank": 15
+  "conf_rank": 12
  },
  {
   "abbr": "DAL",
@@ -38,10 +38,10 @@
   "division": "NFC East",
   "conference": "NFC",
   "wins": 5,
-  "losses": 6,
-  "win_percentage": 0.455,
-  "div_rank": 2,
-  "conf_rank": 10
+  "losses": 7,
+  "win_percentage": 0.417,
+  "div_rank": 3,
+  "conf_rank": 11
  },
  {
   "abbr": "NO",
@@ -52,7 +52,7 @@
   "losses": 7,
   "win_percentage": 0.3,
   "div_rank": 4,
-  "conf_rank": 14
+  "conf_rank": 15
  },
  {
   "abbr": "TB",
@@ -63,7 +63,7 @@
   "losses": 7,
   "win_percentage": 0.3,
   "div_rank": 2,
-  "conf_rank": 12
+  "conf_rank": 13
  },
  {
   "abbr": "ATL",
@@ -74,7 +74,7 @@
   "losses": 7,
   "win_percentage": 0.3,
   "div_rank": 3,
-  "conf_rank": 13
+  "conf_rank": 14
  },
  {
   "abbr": "CAR",
@@ -92,11 +92,11 @@
   "team_name": "Los Angeles Rams",
   "division": "NFC West",
   "conference": "NFC",
-  "wins": 6,
+  "wins": 7,
   "losses": 4,
-  "win_percentage": 0.6,
-  "div_rank": 3,
-  "conf_rank": 9
+  "win_percentage": 0.636,
+  "div_rank": 2,
+  "conf_rank": 7
  },
  {
   "abbr": "SEA",
@@ -106,7 +106,7 @@
   "wins": 6,
   "losses": 4,
   "win_percentage": 0.6,
-  "div_rank": 2,
+  "div_rank": 3,
   "conf_rank": 8
  },
  {
@@ -147,11 +147,11 @@
   "team_name": "Chicago Bears",
   "division": "NFC North",
   "conference": "NFC",
-  "wins": 8,
+  "wins": 9,
   "losses": 2,
-  "win_percentage": 0.8,
-  "div_rank": 2,
-  "conf_rank": 5
+  "win_percentage": 0.818,
+  "div_rank": 1,
+  "conf_rank": 2
  },
  {
   "abbr": "GB",
@@ -159,10 +159,10 @@
   "division": "NFC North",
   "conference": "NFC",
   "wins": 6,
-  "losses": 4,
-  "win_percentage": 0.6,
+  "losses": 5,
+  "win_percentage": 0.545,
   "div_rank": 4,
-  "conf_rank": 7
+  "conf_rank": 9
  },
  {
   "abbr": "DET",
@@ -170,10 +170,10 @@
   "division": "NFC North",
   "conference": "NFC",
   "wins": 8,
-  "losses": 2,
-  "win_percentage": 0.8,
-  "div_rank": 1,
-  "conf_rank": 2
+  "losses": 3,
+  "win_percentage": 0.727,
+  "div_rank": 2,
+  "conf_rank": 5
  },
  {
   "abbr": "LAC",
@@ -192,8 +192,8 @@
   "division": "AFC West",
   "conference": "AFC",
   "wins": 8,
-  "losses": 2,
-  "win_percentage": 0.8,
+  "losses": 3,
+  "win_percentage": 0.727,
   "div_rank": 2,
   "conf_rank": 5
  },
@@ -246,9 +246,9 @@
   "team_name": "Buffalo Bills",
   "division": "AFC East",
   "conference": "AFC",
-  "wins": 9,
+  "wins": 10,
   "losses": 1,
-  "win_percentage": 0.9,
+  "win_percentage": 0.909,
   "div_rank": 1,
   "conf_rank": 1
  },
